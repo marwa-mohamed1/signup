@@ -15,28 +15,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     SignUpSubmittedEvent event,
     Emitter<SignUpState> emit,
   ) async {
-    // ✅ Built-in validation inside BLoC
-    if (!event.email.contains('@') || !event.email.contains('.')) {
-      emit(SignUpFailure('Invalid email format'));
-      return;
-    }
-
-    if (event.password.length < 6) {
-      emit(SignUpFailure('Password must be at least 6 characters'));
-      return;
-    }
-
-    if (event.password != event.confirmPassword) {
-      emit(SignUpFailure('Passwords do not match'));
-      return;
-    }
-
-    // Simulate loading
     emit(SignUpLoading());
 
     await Future.delayed(const Duration(seconds: 2));
 
-    // Fake server responses for testing
     if (event.email == 'exists@example.com') {
       emit(SignUpFailure('Email already in use'));
     } else if (event.email == 'error@example.com') {
