@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/signup/screens/signup_screen.dart'; // تأكدي من المسار
+import 'features/signup/screens/signup_screen.dart'; 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
