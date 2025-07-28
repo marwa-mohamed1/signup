@@ -17,4 +17,4 @@ class SignUpSubmittedEvent extends SignUpEvent {
 
 class SignUpReset extends SignUpEvent {}
 
-class InitSignUpScreenEvent extends SignUpEvent {} // ✅ تصحيح الاسم
+class InitSignUpScreenEvent extends SignUpEvent {} 
